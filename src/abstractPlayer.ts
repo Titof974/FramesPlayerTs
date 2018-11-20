@@ -63,7 +63,7 @@ export abstract class AbstractPlayer {
 	setTimeline(timeline: Timeline) {
 		this.timeline = timeline;
 	}
-	
+
 	async sleep(ms: number) {
 		return new Promise( resolve => setTimeout(resolve, ms) );
 	}

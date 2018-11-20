@@ -8,16 +8,16 @@ let WIDTH = CONTAINER_WIDTH - MARGIN_LEFT - MARGIN_RIGHT;
 let HEIGHT = CONTAINER_HEIGHT - MARGIN_TOP - MARGIN_BOTTOM;
 
 export let SpectrumPlayerConfig = {
-		containerWidth : CONTAINER_WIDTH,
-		containerHeight : CONTAINER_HEIGHT,
-		margin : { top: MARGIN_TOP, right: MARGIN_RIGHT, bottom: MARGIN_BOTTOM, left: MARGIN_LEFT },
-		width: WIDTH,
-		height: HEIGHT,
-		ratio: HEIGHT / WIDTH,
-		domain_offset : { min_x : 1000000000, max_x : 1000000000, min_y : 10, max_y : 10},
-		brush : true,
-		focus : true,
-		ctrlbar : true,
-		autoscale : false,
-		fixedXscale : true
-    }
+	containerWidth : CONTAINER_WIDTH,
+	containerHeight : CONTAINER_HEIGHT,
+	margin : { top: MARGIN_TOP, right: MARGIN_RIGHT, bottom: MARGIN_BOTTOM, left: MARGIN_LEFT },
+	width: WIDTH,
+	height: HEIGHT,
+	ratio: HEIGHT / WIDTH,
+	domain_offset : { min_x : 1000000000, max_x : 1000000000, min_y : 10, max_y : 10},
+	brush : true,
+	focus : true,
+	ctrlbar : true,
+	autoscale : false,
+	fixedXscale : true
+}

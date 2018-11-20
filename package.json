@@ -1,6 +1,6 @@
 {
   "name": "@titof/framesplayerts",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "A simple frameplayer",
   "main": "dist/frameplayer.js",
   "types": "src/frameplayer.ts",

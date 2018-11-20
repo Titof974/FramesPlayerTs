@@ -43,6 +43,4 @@ export class Emitter{
 	removeListener(eventName: string, fn: Function){
 		this._getEventListByName(eventName).delete(fn);
 	}
-
-
 }
