@@ -23,7 +23,7 @@ export class SpectrumPlayer extends AbstractPlayer {
 		this.elems = {};
 
 		// Body of the player
-		this.elems.svg = d3.select(this.chartElement.nativeElement)
+		this.elems.svg = d3.select("body")
 		.append('svg')
 		.attr('width', this.props.containerWidth)
 		.attr('height', this.props.containerHeight);
@@ -189,6 +189,7 @@ export class SpectrumPlayer extends AbstractPlayer {
 
 	focusText(text: string): void {
 		this.elems.focustext.text(text);
+		if(!this.elems.focustext.node()) return;
 		var bbox = this.elems.focustext.node().getBBox();
 		this.elems.focustextbg
 		.attr("width", bbox.width + 6)
@@ -233,7 +234,6 @@ export class SpectrumPlayer extends AbstractPlayer {
 		});
     	d3.select('body')
         .on('click', function() {
-        	console.log("ok");
             d3.select('.context-menu').remove();
         }).on('contextmenu', function(){ 
 	        d3.event.preventDefault();

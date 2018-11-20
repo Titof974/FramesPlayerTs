@@ -6,8 +6,8 @@ class DummyFramesBuilder extends AbstractFramesBuilder {
 		let frames: IFrame[] = []
 		for (var i = 0; i < 100; ++i) {
 			let points: IPoint[] = [];
-			for (var j = 0; i < 1000; ++i) {
-				points.push(Point(i, this.getRandomInt(1,50)));
+			for (var j = 0; j < 100; ++j) {
+				points.push(Point(j, this.getRandomInt(1,50)));
 			}
 			frames.push(Frame(points, 100));
 		}
