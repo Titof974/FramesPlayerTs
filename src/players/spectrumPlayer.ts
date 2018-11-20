@@ -23,7 +23,7 @@ export class SpectrumPlayer extends AbstractPlayer {
 		this.elems = {};
 
 		// Body of the player
-		this.elems.svg = d3.select("body")
+		this.elems.svg = d3.select(this.chartElement)
 		.append('svg')
 		.attr('width', this.props.containerWidth)
 		.attr('height', this.props.containerHeight);

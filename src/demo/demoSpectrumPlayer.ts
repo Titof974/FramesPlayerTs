@@ -24,8 +24,7 @@ class DummyFramesBuilder extends AbstractFramesBuilder {
 	}
 
 }
-let body = document.getElementsByTagName("body");
 let frames: IFrame[] = new DummyFramesBuilder().build();
-let player = new SpectrumPlayer(body, new Timeline(frames), SpectrumPlayerConfig);
+let player = new SpectrumPlayer("body", new Timeline(frames), SpectrumPlayerConfig);
 
 export { player };
