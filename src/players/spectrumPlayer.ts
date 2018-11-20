@@ -70,8 +70,8 @@ export class SpectrumPlayer extends AbstractPlayer {
 		// The line
 		this.elems.line = d3.line<IPoint>()
 		.x(function(d) { return _this.elems.x(d.x); })
-		.y(function(d) { return _this.elems.y(d.y); })
-		.curve(d3.curveMonotoneX);
+		.y(function(d) { return _this.elems.y(d.y); });
+		//.curve(d3.curveMonotoneX);
 
 		// Clip
 		this.elems.g.append('defs')

@@ -1,7 +1,9 @@
 const path = require('path');
+const HtmlWebpackPlugin = require("html-webpack-plugin");
 
 module.exports = {
   entry: './src/demo/demoSpectrumPlayer.ts',
+  devtool: "source-map",
   module: {
     rules: [
                 {
@@ -16,6 +18,11 @@ module.exports = {
   },
   output: {
     filename: 'demoSpectrumPlayer.js',
-    path: path.resolve(__dirname, 'dist')
+    path: path.resolve(__dirname, 'demo')
   },
+  plugins: [
+    new HtmlWebpackPlugin({      // Instancie le plugin
+      template: "./src/demo/spectrumPlayer.html"  // Spécifie notre template
+    })
+  ]
 };

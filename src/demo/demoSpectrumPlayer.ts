@@ -6,10 +6,13 @@ class DummyFramesBuilder extends AbstractFramesBuilder {
 		let frames: IFrame[] = []
 		for (var i = 0; i < 100; ++i) {
 			let points: IPoint[] = [];
+			let counter = 0;
+			let increase = 90/180*Math.PI / 9;
 			for (var j = 0; j < 100; ++j) {
-				points.push(Point(j, this.getRandomInt(1,50)));
+				points.push(Point(j, 180 - Math.sin(counter + i * Math.PI/9) * 120));
+				counter += increase;
 			}
-			frames.push(Frame(points, 100));
+			frames.push(Frame(points, 100, {'color' : 'blue'}));
 		}
 		return frames;
 	}
