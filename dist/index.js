@@ -17,3 +17,5 @@ var spectrumPlayerConfig_1 = require("./players/spectrumPlayerConfig");
 exports.SpectrumPlayerConfig = spectrumPlayerConfig_1.SpectrumPlayerConfig;
 var pointsPlayer_1 = require("./players/pointsPlayer");
 exports.PointsPlayer = pointsPlayer_1.PointsPlayer;
+var pointsPlayerConfig_1 = require("./players/pointsPlayerConfig");
+exports.PointsPlayerConfig = pointsPlayerConfig_1.PointsPlayerConfig;

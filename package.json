@@ -1,6 +1,6 @@
 {
   "name": "@titof/framesplayerts",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "A simple frameplayer",
   "main": "dist/index.js",
   "types": "src/index.ts",

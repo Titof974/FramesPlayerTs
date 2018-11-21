@@ -6,4 +6,4 @@ export {AbstractPlayer} from './abstractPlayer';
 export {SpectrumPlayer} from './players/spectrumPlayer';
 export {SpectrumPlayerConfig} from './players/spectrumPlayerConfig';
 export {PointsPlayer} from './players/pointsPlayer';
-
+export {PointsPlayerConfig} from './players/pointsPlayerConfig';

@@ -27,17 +27,20 @@ export class PointsPlayer extends AbstractPlayer {
 		.attr('overflow', 'hidden');
 
 
-		this.elems.x = d3.scaleLinear().range([0, this.props.width]).domain([0,1]);
-		this.elems.y = d3.scaleLinear().range([this.props.height, 0]).domain([0,1]);
+		this.elems.x = d3.scaleLinear().range([0, this.props.width]).domain([this.props.domain.min_x,this.props.domain.max_x]);
+		this.elems.y = d3.scaleLinear().range([this.props.height, 0]).domain([this.props.domain.min_y,this.props.domain.max_y]);
 
 
 		// Define the axes
 		this.elems.xAxis = d3.axisBottom(this.elems.x).ticks(0);
 		this.elems.yAxis = d3.axisLeft(this.elems.y).ticks(0);
 
+    	this.initControlBar();
+
     	this.display();
 
-    	this.initControlBar();
+
+    	this.initCommands();
 	 }
 
 	 async play() {
@@ -81,6 +84,9 @@ export class PointsPlayer extends AbstractPlayer {
         .attr("r", 3.5)
         .attr("cx", function(d: any) { return _this.elems.x(d.x); })
         .attr("cy", function(d: any) { return _this.elems.y(d.y); });
+
+		// CtrlBar
+		this.drawCtrlBar();
 	 }
 
 	initControlBar(): void {
