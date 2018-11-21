@@ -2,8 +2,8 @@
   "name": "@titof/framesplayerts",
   "version": "1.0.4",
   "description": "A simple frameplayer",
-  "main": "dist/frameplayer.js",
-  "types": "src/frameplayer.ts",
+  "main": "dist/index.js",
+  "types": "src/index.ts",
   "scripts": {
     "build": "tsc",
     "test": "echo \"Error: no test specified\" && exit 1"

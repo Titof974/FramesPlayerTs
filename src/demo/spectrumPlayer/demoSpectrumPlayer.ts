@@ -1,4 +1,4 @@
-import {AbstractFramesBuilder, SpectrumPlayer, SpectrumPlayerConfig, IFrame, Frame, Point, IPoint, Timeline} from '../framesplayer';
+import {AbstractFramesBuilder, SpectrumPlayer, SpectrumPlayerConfig, IFrame, Frame, Point, IPoint, Timeline} from '../../index';;
 
 class DummyFramesBuilder extends AbstractFramesBuilder {
 

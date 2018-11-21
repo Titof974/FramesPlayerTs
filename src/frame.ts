@@ -18,6 +18,11 @@ abstract class AbstractFramesBuilder {
 	}
 
 	abstract build(): IFrame[];
+
+	toTimeline(): Timeline {
+		return new Timeline(this.build());
+	}
+
 }
 
 export { IFrame, Frame, AbstractFramesBuilder };
