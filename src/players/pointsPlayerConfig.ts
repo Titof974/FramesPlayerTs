@@ -14,6 +14,7 @@ export let PointsPlayerConfig = {
 	width: WIDTH,
 	height: HEIGHT,
 	ratio: HEIGHT / WIDTH,
-	domain : {min_x : 0, max_x: 300, min_y: 0, max_y: 300},
+	domain : {min_x : 0, max_x: 0, min_y: 0, max_y: 0},
+	range : {min_x : 0, max_x: 0, min_y: 0, max_y: 0},
 	ctrlbar : true
 }

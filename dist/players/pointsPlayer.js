@@ -32,8 +32,8 @@ class PointsPlayer extends abstractPlayer_1.AbstractPlayer {
         this.elems.g = this.elems.svg.append('g')
             .attr('transform', 'translate(' + this.props.margin.left + ', ' + this.props.margin.top + ')')
             .attr('overflow', 'hidden');
-        this.elems.x = d3.scaleLinear().range([0, this.props.width]).domain([this.props.domain.min_x, this.props.domain.max_x]);
-        this.elems.y = d3.scaleLinear().range([this.props.height, 0]).domain([this.props.domain.min_y, this.props.domain.max_y]);
+        this.elems.x = d3.scaleLinear().range([this.props.range.min_x, this.props.range.max_x]).domain([this.props.domain.min_x, this.props.domain.max_x]);
+        this.elems.y = d3.scaleLinear().range([this.props.range.min_y, this.props.range.max_y]).domain([this.props.domain.min_y, this.props.domain.max_y]);
         // Define the axes
         this.elems.xAxis = d3.axisBottom(this.elems.x).ticks(0);
         this.elems.yAxis = d3.axisLeft(this.elems.y).ticks(0);

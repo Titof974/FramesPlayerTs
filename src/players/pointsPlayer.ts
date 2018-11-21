@@ -27,8 +27,8 @@ export class PointsPlayer extends AbstractPlayer {
 		.attr('overflow', 'hidden');
 
 
-		this.elems.x = d3.scaleLinear().range([0, this.props.width]).domain([this.props.domain.min_x,this.props.domain.max_x]);
-		this.elems.y = d3.scaleLinear().range([this.props.height, 0]).domain([this.props.domain.min_y,this.props.domain.max_y]);
+		this.elems.x = d3.scaleLinear().range([this.props.range.min_x, this.props.range.max_x]).domain([this.props.domain.min_x,this.props.domain.max_x]);
+		this.elems.y = d3.scaleLinear().range([this.props.range.min_y, this.props.range.max_y]).domain([this.props.domain.min_y,this.props.domain.max_y]);
 
 
 		// Define the axes
