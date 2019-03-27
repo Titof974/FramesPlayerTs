@@ -14,8 +14,18 @@ class AbstractPlayer {
         this.state = false;
         this.chartElement = chartElement;
         this.commands = new eventEmitter_1.Emitter();
+        this.eventsEmitter = null;
         this.timeline = timeline;
         this.props = props;
+    }
+    setEmitter(emitter) {
+        this.eventsEmitter = emitter;
+        return this;
+    }
+    sendEvent(name, ...args) {
+        if (this.eventsEmitter != null) {
+            this.eventsEmitter.emit(name, args);
+        }
     }
     initCommands() {
         var _this = this;

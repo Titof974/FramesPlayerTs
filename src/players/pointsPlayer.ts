@@ -46,9 +46,10 @@ export class PointsPlayer extends AbstractPlayer {
 	 async play() {
 		this.state = true;
 		while (this.state && !this.timeline.atEnd()) {
+			let delta = +new Date();
 			this.next();
 			if (this.state = !this.timeline.atEnd()) {
-				await this.sleep(this.timeline.current().duration);
+				await this.sleep(this.timeline.current().duration - (+new Date()-delta));
 			}
 		}
 	}

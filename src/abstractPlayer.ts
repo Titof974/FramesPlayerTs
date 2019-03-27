@@ -7,18 +7,32 @@ export abstract class AbstractPlayer {
 
 	state: boolean = false;
 	commands: Emitter;
+	eventsEmitter: Emitter | null;
 	chartElement: any;
 	timeline: Timeline;
 	props: any;
 
+
 	constructor(chartElement: any, timeline: Timeline, props: any) {
 		this.chartElement = chartElement;
 		this.commands = new Emitter();
+		this.eventsEmitter = null;
 		this.timeline = timeline;
 		this.props = props;
 	}
 
 	protected abstract initPlayer(): void;
+
+	protected setEmitter(emitter: Emitter | null) {
+		this.eventsEmitter = emitter;
+		return this;
+	}
+
+	protected sendEvent(name: string, ...args: any[]) {
+		if (this.eventsEmitter != null) {
+			this.eventsEmitter.emit(name, args);
+		}
+	}
 
 	protected initCommands():void {
 		var _this = this;

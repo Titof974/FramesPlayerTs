@@ -115,40 +115,47 @@ export class SpectrumPlayer extends AbstractPlayer {
 
 	 async play() {
 		this.state = true;
+		this.sendEvent("play", {"status" : "start"});
 		while (this.state && !this.timeline.atEnd()) {
+			this.sendEvent("play", {"status" : "running"});
 			this.next();
 			if (this.state = !this.timeline.atEnd()) {
 				await this.sleep(this.timeline.current().duration);
 			}
 		}
+		this.sendEvent("play", {"status" : "end"});
 	}
 
 	 next(): void {
 	 	this.timeline.next();
 		this.manualFindDomain();
 		this.display();
+		this.sendEvent("next");
 	 }
 
 	 prev(): void {
 	 	this.timeline.prev();
 		this.manualFindDomain();
 		this.display();
+		this.sendEvent("prev");
 	 }
 
 	 pause(): void {
-	 	this.state = false;
+		 this.state = false;
+		 this.sendEvent("pause");
 	 }
 
 	 reset(): void{
 		this.timeline.setCursor(0);
 		this.display();
+		this.sendEvent("reset");
 	 }
 
 	 display(): void {
 		this.voironoi();
 		// Pass data to path
 		this.elems.path.attr("d", this.elems.line(this.timeline.current().points));
-
+		this.sendEvent("display", this.timeline.current());
 		// CtrlBar
 		this.drawCtrlBar();
 	 }

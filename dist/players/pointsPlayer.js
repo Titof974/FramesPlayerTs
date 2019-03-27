@@ -45,9 +45,10 @@ class PointsPlayer extends abstractPlayer_1.AbstractPlayer {
         return __awaiter(this, void 0, void 0, function* () {
             this.state = true;
             while (this.state && !this.timeline.atEnd()) {
+                let delta = +new Date();
                 this.next();
                 if (this.state = !this.timeline.atEnd()) {
-                    yield this.sleep(this.timeline.current().duration);
+                    yield this.sleep(this.timeline.current().duration - (+new Date() - delta));
                 }
             }
         });

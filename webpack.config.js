@@ -22,7 +22,7 @@ module.exports = {
   },
   plugins: [
     new HtmlWebpackPlugin({      // Instancie le plugin
-      template: "./src/demo/pointsPlayer/player.html"  // Spécifie notre template
+      template: "./src/demo/spectrumPlayer/spectrumPlayer.html"  // Spécifie notre template
     })
   ]
 };

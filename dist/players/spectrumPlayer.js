@@ -101,35 +101,43 @@ class SpectrumPlayer extends abstractPlayer_1.AbstractPlayer {
     play() {
         return __awaiter(this, void 0, void 0, function* () {
             this.state = true;
+            this.sendEvent("play", { "status": "start" });
             while (this.state && !this.timeline.atEnd()) {
+                this.sendEvent("play", { "status": "running" });
                 this.next();
                 if (this.state = !this.timeline.atEnd()) {
                     yield this.sleep(this.timeline.current().duration);
                 }
             }
+            this.sendEvent("play", { "status": "end" });
         });
     }
     next() {
         this.timeline.next();
         this.manualFindDomain();
         this.display();
+        this.sendEvent("next");
     }
     prev() {
         this.timeline.prev();
         this.manualFindDomain();
         this.display();
+        this.sendEvent("prev");
     }
     pause() {
         this.state = false;
+        this.sendEvent("pause");
     }
     reset() {
         this.timeline.setCursor(0);
         this.display();
+        this.sendEvent("reset");
     }
     display() {
         this.voironoi();
         // Pass data to path
         this.elems.path.attr("d", this.elems.line(this.timeline.current().points));
+        this.sendEvent("display", this.timeline.current());
         // CtrlBar
         this.drawCtrlBar();
     }
